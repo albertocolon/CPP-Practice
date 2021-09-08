@@ -36,9 +36,45 @@ int main()
         {
         cout << "Please enter a valid menu choice: ";
         cin >> choice;
-
         }
-    } 
 
+        // If the user does not want to quit, proceed.
+        if (choice != QUIT_CHOICE)
+        {
+            // Get the number of months.
+            cout << "For how many months? ";
+            cin >> months;
 
+            // Display the membership fees.
+            switch (choice)
+            {
+                case ADULT_CHOICE:
+                    showFees(ADULT, months);
+                    break;
+                case CHILD_CHOICE:
+                    showFees(CHILD, months);
+                    break;
+                case SENIOR_CHOICE:
+                    showFees(SENIOR, months);
+            }
+        }        
+    } while (choice != QUIT_CHOICE);
+    return 0;
 }
+
+void showMenu()
+{
+    cout << "\n\t\tHealth Club Membership Menu\n\n"
+    << "1. Standar Adult membership\n"
+    << "2. Child Membership\n"
+    << "3. Senior Citizen Membership\n"
+    << "4. Quit the Program\n\n"
+    << "Enter your choice: ";
+}
+
+void showFees(double memberRate, int months)
+{
+    cout << "The total charges are: $" << (memberRate * months) << endl;
+}
+
+
