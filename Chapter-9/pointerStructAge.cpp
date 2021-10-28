@@ -14,22 +14,29 @@ struct BirthDate {
     int bDay;
 };
 
-void greeting();
+string greeting();
+bool validteData();
 
 int main()
 {
     CurrentDate today;
     string person;
-    int *ptr;
+    int *ptr = nullptr;
     
-    greeting();
+    person = greeting();
+    cout << "Now, please provide today's date.\n";
+    cout << "First provide the current year: ";
+    cin >> today.cYear;
+
+
+
 
 
     return 0;
 }
 
 
-void greeting()
+string greeting()
 {
     string name;
     cout << "\t\tWelcome!\n";
@@ -38,5 +45,6 @@ void greeting()
     cin >> name; 
     cout << endl;
     cout << "Thanks " << name << endl;
+    return name;
 
 }
